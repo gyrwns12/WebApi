@@ -12,7 +12,7 @@ EXPOSE 30001
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["WebApi.csproj", "./"]
+COPY ["../WebApi.csproj", "./"]
 RUN dotnet restore "./WebApi.csproj"
 COPY . .
 WORKDIR "/src/WebApi"
