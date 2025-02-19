@@ -7,12 +7,12 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git url: 'https://github.com/gyrwns12/webapi.git', branch: 'master'
+                git url: 'https://github.com/gyvrns12/webapi.git', branch: 'master'
             }
         }
         stage('Build') {
             steps {
-                sh 'docker build -t $DOCKER_IMAGE:latest .'
+                sh 'docker build -t $DOCKER_IMAGE:latest -f WebApi/Dockerfile WebApi/'  // WebApi 내부에서 빌드
             }
         }
         stage('Push') {
@@ -26,8 +26,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sh 'kubectl apply -f webapi-deployment.yaml'
-                    sh 'kubectl apply -f webapi-service.yaml'
+                    sh 'kubectl apply -f WebApi/webapi-deployment.yaml'  // WebApi 내부에서 적용
+                    sh 'kubectl apply -f WebApi/webapi-service.yaml'
                 }
             }
         }
