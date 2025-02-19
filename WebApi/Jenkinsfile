@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git url: 'https://github.com/gyvrns12/webapi.git', branch: 'master'
+                git url: 'https://github.com/gyrwns12/webapi.git', branch: 'master'
             }
         }
         stage('Build') {
