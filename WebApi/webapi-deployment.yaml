@@ -16,4 +16,4 @@ spec:
       - name: webapi
         image: hyeokjunyun/webapi:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 80
