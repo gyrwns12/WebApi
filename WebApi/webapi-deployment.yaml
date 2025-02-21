@@ -15,5 +15,6 @@ spec:
       containers:
       - name: webapi
         image: hyeokjunyun/webapi:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
