@@ -28,6 +28,7 @@ pipeline {
                 script {
                     sh 'kubectl apply -f WebApi/webapi-deployment.yaml'  // WebApi 내부에서 적용
                     sh 'kubectl apply -f WebApi/webapi-service.yaml'
+                    sh 'kubectl rollout restart deployment webapi'
                 }
             }
         }
