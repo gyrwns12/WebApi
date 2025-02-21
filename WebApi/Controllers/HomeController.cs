@@ -17,7 +17,7 @@ namespace WebApi.Controllers
         [HttpGet(Name = "Home")]
         public IActionResult Get()
         {
-            var message = "Hello World!";
+            var message = "윤혁준1";
             return Ok(message);
         }
     }
